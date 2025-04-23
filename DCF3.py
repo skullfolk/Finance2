@@ -49,7 +49,7 @@ beta_values = []
 
 for i in range(simulations):
     g = np.random.normal(growth, 0.06)
-    m = np.random.triangular(margin_min, (margin_min + margin_max) / 2, margin_max)
+    m = np.random.triangular(left=margin_min, (margin_min + margin_max) / 2, right=margin_max)
     r_f = np.random.normal(rf, 0.002)
     er_p = np.random.normal(erp, 0.005)
     beta_u = np.random.normal(unlevered_beta, 0.1)

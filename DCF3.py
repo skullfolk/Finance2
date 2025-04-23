@@ -53,7 +53,9 @@ for i in range(simulations):
     r_f = np.random.normal(rf, 0.002)
     er_p = np.random.normal(erp, 0.005)
     beta_u = np.random.normal(unlevered_beta, 0.1)
-    t_growth = np.random.triangular(left=0.025, mode=term_growth, right=0.045)
+    mode = np.clip(term_growth, 0.025, 0.045)
+    t_growth = np.random.triangular(left=0.025, mode=mode, right=0.045)
+
 
     beta_l = beta_u * (1 + (1 - tc) * de_ratio)
     beta_adj = 0.67 * beta_l + 0.33 * 1.0
